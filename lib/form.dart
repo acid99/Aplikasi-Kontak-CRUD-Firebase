@@ -113,6 +113,7 @@ class _FormPageState extends State<FormPage> {
               controller: namaController,
               decoration: InputDecoration(
                   hintText: "Nama",
+                  prefixIcon: Icon(Icons.person_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -120,7 +121,7 @@ class _FormPageState extends State<FormPage> {
                   filled: true),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Nama is Required!';
+                  return 'Nama harus diisi!!!';
                 }
                 return null;
               },
@@ -139,6 +140,7 @@ class _FormPageState extends State<FormPage> {
               controller: nohpController,
               decoration: InputDecoration(
                   hintText: "No. HP",
+                  prefixIcon: Icon(Icons.phone_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -146,7 +148,7 @@ class _FormPageState extends State<FormPage> {
                   filled: true),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'No. HP is Required!';
+                  return 'No. HP harus diisi!!!';
                 }
                 return null;
               },
@@ -165,6 +167,7 @@ class _FormPageState extends State<FormPage> {
               controller: emailController,
               decoration: InputDecoration(
                   hintText: "Email",
+                  prefixIcon: Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -172,7 +175,7 @@ class _FormPageState extends State<FormPage> {
                   filled: true),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Email is Required!';
+                  return 'Email harus diisi!!!';
                 }
                 return null;
               },
@@ -189,11 +192,9 @@ class _FormPageState extends State<FormPage> {
             SizedBox(height: 10),
             TextFormField(
               controller: alamatController,
-              keyboardType: TextInputType.multiline,
-              minLines: 5,
-              maxLines: null,
               decoration: InputDecoration(
                   hintText: "Alamat",
+                  prefixIcon: Icon(Icons.home_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -201,7 +202,7 @@ class _FormPageState extends State<FormPage> {
                   filled: true),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return 'Alamat is Required!';
+                  return 'Alamat harus diisi!!!';
                 }
                 return null;
               },
@@ -218,7 +219,7 @@ class _FormPageState extends State<FormPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 child: Text(
-                  "Submit",
+                  "Tambah",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -242,8 +243,9 @@ class _FormPageState extends State<FormPage> {
                     });
                   }
                   //snackbar notification
-                  final snackBar =
-                      SnackBar(content: Text('Data saved successfully!'));
+                  final snackBar = SnackBar(
+                      content: Text(
+                          'Data telah berhasil disimpan ke dalam database!'));
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
                   //back to main page

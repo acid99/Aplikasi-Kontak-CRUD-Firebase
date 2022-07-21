@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                     })
                 : Center(
                     child: Text(
-                      'No Data',
+                      'Belum Ada Data',
                       style: TextStyle(fontSize: 20),
                     ),
                   );
